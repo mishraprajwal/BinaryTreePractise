@@ -24,16 +24,10 @@ public class BinaryTreePractise {
         }
     }
     
-
-    public void CreateBinaryTree() {
-        root = null;
-    }
-
     public Node insertRecursive(Node current, int value) {
         if (current == null) {
             return new Node(value);
         }
-
         if (value < current.value) {
             current.left = insertRecursive(current.left, value);
         } else if (value > current.value) {
