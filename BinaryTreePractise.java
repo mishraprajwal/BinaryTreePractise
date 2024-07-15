@@ -2,6 +2,11 @@ import java.util.Scanner;
 
 public class BinaryTreePractise {
     static Node root;
+
+        public BinaryTreePractise() {
+            root = null;
+        }
+    
     public static void main(String[] args) {
         BinaryTreePractise binaryTree = new BinaryTreePractise();
         try (Scanner scanner = new Scanner(System.in)) {
@@ -13,14 +18,13 @@ public class BinaryTreePractise {
             }
 
         System.out.println("Inorder traversal for binary Tree:");
-        displayInorder(root);
+        binaryTree.displayInorder(root);
 
         System.out.println("Preorder traversal for binary Tree:");
-        displayPreorder(root);
+        binaryTree.displayPreorder(root);
 
         System.out.println("Postorder traversal for binary Tree:");
-        displayPostorder(root);
-
+        binaryTree.displayPostorder(root);
         }
     }
     
@@ -43,7 +47,7 @@ public class BinaryTreePractise {
         root = insertRecursive(root, value);
     }
 
-    public static void displayInorder(Node node) {
+    public void displayInorder(Node node) {
         if (node != null) {
             displayInorder(node.left);
             System.out.println("" + node.value);
@@ -51,7 +55,7 @@ public class BinaryTreePractise {
         }
     }
     
-    public static void displayPreorder(Node node) {
+    public void displayPreorder(Node node) {
         if (node != null) {
             System.out.println("" + node.value);
             displayPreorder(node.left);
@@ -59,7 +63,7 @@ public class BinaryTreePractise {
         }
     }
 
-    public static void displayPostorder(Node node) {
+    public void displayPostorder(Node node) {
         if (node != null) {
             displayPostorder(node.left);
             displayPostorder(node.right);
